@@ -42,10 +42,8 @@ class Dealer < Player
       exit
     elsif score > DEALER_LIMIT_SCORE
       # ディーラーはスコアが16を超えた場合ドローしない
-      unless hands.size == 2
-        yellow_puts 'The dealer stopped drawing.'
-        sleep(1)
-      end
+      yellow_puts 'The dealer stopped drawing.' unless hands.size == 2
+      sleep(1)
     end
   end
 
